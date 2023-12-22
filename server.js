@@ -38,5 +38,5 @@ app.use('/api/patients', patientsRoutes);
 
 //listen
 app.listen(PORT, () => {
-  console.log(`El servidor está esuchando en el puerto ${PORT}`)
+  console.log(`El servidor está escuchando en el puerto ${PORT}`)
 })
