@@ -12,20 +12,20 @@ const app = express()
 
 const PORT = process.env.PORT || 3026
 
-const dominiosPermitdios =['http://localhost:5173'];
+const dominiosPermitdios =['https://apv.jzgdevs.cloud/', 'https://apv.jzgdevs.cloud'];
 
-// const corsOption = {
-//   origin: function(origin, callback) {
-//     if(dominiosPermitdios.indexOf(origin) !== -1){
-//       //el origen está permitido
-//       callback(null, true)
-//     }else {
-//       callback(new Error('No permitido por CORS'))
-//     }
-//   }
-// }
+const corsOption = {
+  origin: function(origin, callback) {
+    if(dominiosPermitdios.indexOf(origin) !== -1){
+      //el origen está permitido
+      callback(null, true)
+    }else {
+      callback(new Error('No permitido por CORS'))
+    }
+  }
+}
 
-//corsOption
+corsOption
 //middlewares
 app.use(cors())
 app.use(express.json())
