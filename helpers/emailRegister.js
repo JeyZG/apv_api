@@ -13,8 +13,7 @@ const emailRegister = async(datos) => {
 
       const { email, name, token } = datos;
 
-      console.log(__dirname)
-  
+    
       //enviar el emial
       try {
         const info = await transport.sendMail({
@@ -24,7 +23,7 @@ const emailRegister = async(datos) => {
           text: 'Comprueba ti cuenta en APV',
           html: `<p>Hola ${name}, comprueba tu cuenta en APV</p>
           <p>Tu cuenta está casi lista, solo debes comprobarla dando click en el enlace:
-          <a href="${__dirname}/confirm/${token}">Comprobar cuenta</a> </p>
+          <a href="${process.env.FRONTEND_URL}/confirm/${token}">Comprobar cuenta</a> </p>
           <p>Si tú no creaste esta cuenta puedes ignorar este mensaje</p>
           `
         });
