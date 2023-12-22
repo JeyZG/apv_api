@@ -8,8 +8,8 @@ export const connectDb = async() => {
 
         const url = `${db.connection.host}: ${db.connection.port}`
 
-        console.log(`CONECTADO A LA BASE DE DATOS 2 ${url}`);
+        console.log(`CONECTADO A LA BASE DE DATOS ${url}`);
     } catch (error) {
-        console.log(`No se pudo conectar a la base dedatos ${error.message}`);
+        console.log(`No se pudo conectar a la base de datos ${error.message}`);
     }
 }
